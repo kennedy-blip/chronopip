@@ -1,5 +1,5 @@
 import { useMemo, useState, type FormEvent } from 'react';
-import { Activity, Boxes, Cpu, Database, GitBranch, Plus, Radio, ShieldCheck, X, Zap } from 'lucide-react';
+import { Activity, Boxes, Cpu, Database, GitBranch, Plus, Radio, ShieldCheck, X } from 'lucide-react';
 import SchedulerHeader from './components/SchedulerHeader';
 import CronBuilder from './components/CronBuilder';
 import JobQueueTable from './components/JobQueueTable';
