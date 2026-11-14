@@ -1,7 +1,7 @@
 const names = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 export function describeCron(expression: string): string {
  const parts = expression.trim().split(/\s+/); if (parts.length !== 5) return 'Enter a valid 5-field cron expression';
- const [min,hour,day,month,weekday] = parts;
+ const [min,hour,day,,weekday] = parts;
  if (expression === '*/15 * * * *') return 'Every 15 minutes';
  if (expression === '*/30 * * * *') return 'Every 30 minutes';
  if (expression === '0 2 * * *') return 'Every day at 02:00 UTC';
