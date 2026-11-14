@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Activity, Clock3, Plus, RadioTower, Zap } from 'lucide-react';
+import { Activity, Clock3, Plus, Zap } from 'lucide-react';
 interface Props { activeCount:number; onNew:()=>void; onTriggerAll:()=>void; }
 export default function SchedulerHeader({activeCount,onNew,onTriggerAll}:Props) {
  const [now,setNow] = useState(new Date());
