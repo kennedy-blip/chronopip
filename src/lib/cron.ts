@@ -1,6 +1,6 @@
 const names = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 export function describeCron(expression: string): string {
- const parts = expression.trim().split(/\\s+/); if (parts.length !== 5) return 'Enter a valid 5-field cron expression';
+ const parts = expression.trim().split(/\s+/); if (parts.length !== 5) return 'Enter a valid 5-field cron expression';
  const [min,hour,day,month,weekday] = parts;
  if (expression === '*/15 * * * *') return 'Every 15 minutes';
  if (expression === '*/30 * * * *') return 'Every 30 minutes';
@@ -13,7 +13,7 @@ export function describeCron(expression: string): string {
  return `Custom schedule · ${expression}`;
 }
 export function nextRuns(expression: string, count = 5): Date[] {
- const parts = expression.trim().split(/\\s+/); if (parts.length !== 5) return [];
+ const parts = expression.trim().split(/\s+/); if (parts.length !== 5) return [];
  const [minute,hour,day,month,weekday] = parts;
  const matches = (field: string, value: number) => field === '*' || field === String(value) || (field.startsWith('*/') && Number(field.slice(2)) > 0 && value % Number(field.slice(2)) === 0) || (field.includes('-') && value >= Number(field.split('-')[0]) && value <= Number(field.split('-')[1]));
  const result: Date[] = []; const cursor = new Date(); cursor.setSeconds(0,0); cursor.setMinutes(cursor.getMinutes()+1);
