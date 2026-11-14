@@ -1,0 +1,3 @@
+export type JobStatus = 'Active' | 'Paused' | 'Retrying' | 'Failed';
+export interface Job { id: string; name: string; schedule: string; description: string; status: JobStatus; lastRun: string; duration: string; nextRun: string; runs: number; }
+export interface Run { id: string; job: string; status: 'Success' | 'Failed' | 'Retrying'; time: string; duration: string; exitCode: number; message: string; }
